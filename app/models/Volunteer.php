@@ -1,3 +1,5 @@
+<?php
+
 class Volunteer extends Eloquent {
 
         public function dispatcher()

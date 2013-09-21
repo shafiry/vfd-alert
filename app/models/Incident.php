@@ -1,3 +1,5 @@
+<?php
+
 class Incident extends Eloquent {
 
         public function dispatcher()
