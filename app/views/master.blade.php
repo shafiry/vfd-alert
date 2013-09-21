@@ -11,7 +11,14 @@
 	</head>
 	<body>
 
-		<h1>VFD-Alert</h1>
+		<header>
+			<h1>VFD-Alert</h1>
+		</header>
+
+		<div class="container">
+            @yield('container')
+		</div>
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
