@@ -10,7 +10,6 @@
 		<script src="js/vendor/less-1.4.1.min.js"></script>		
 	</head>
 	<body>
-
 		<header>
 			<h1>VFD-Alert</h1>
 		</header>
