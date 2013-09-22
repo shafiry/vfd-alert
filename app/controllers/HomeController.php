@@ -30,6 +30,21 @@ class HomeController extends BaseController {
 		if ($user) {
 			echo "You logged in correctly";
 			Session::put('user', $user);
+	 
+			// set your AccountSid and AuthToken from www.twilio.com/user/account
+			$AccountSid = "AC26eaf500ebb246cefb61e96834aba585";
+			$AuthToken = "37529e67f84db998192627ca8a7eb219";
+			 
+			$client = new Services_Twilio($AccountSid, $AuthToken);
+			 
+			$sms = $client->account->sms_messages->create(
+			    "702-728-3368", // From this number
+			    "347-418-6759", // To this number
+			    "Test message!"
+			);
+			 
+			// Display a confirmation message on the screen
+			//echo "Sent message {$sms->sid}";*/
 		} else {
 			App::abort(401, 'You are not authorized.');
 		}
