@@ -16,9 +16,10 @@ class Volunteer extends Eloquent {
 
 	public static function add_volunteer($name, $phone){
 		$volunteer = Volunteer::where('phone', $phone)->first();
-		if(!$volunteer){
-			echo "hello";
-			$volunteer = Volunteer::create(array('name' => $name, 'phone' => $phone, 'dispatcher_id' => Session::get('user')->id));
+
+		if (!$volunteer)
+		{
+			Volunteer::create(array('name' => $name, 'phone' => $phone, 'dispatcher_id' => Session::get('user')->id));
 		}
 	}
 }
