@@ -20,4 +20,17 @@ class HomeController extends BaseController {
 		return View::make('pages.index');
 	}
 
+	public function login()
+	{
+		$email = Input::get('email');
+		$password = Input::get('password');
+		echo $email; echo $password;
+		if (Auth::attempt(array('email' => $email, 'password' => $password)))		{
+			//return Redirect::intended('dashboard');
+			return "works";
+		} else {	
+			return "hello world";
+		}
+	}
+
 }
