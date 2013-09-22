@@ -24,12 +24,14 @@ class HomeController extends BaseController {
 	{
 		$email = Input::get('email');
 		$password = Input::get('password');
-		echo $email; echo $password;
-		if (Auth::attempt(array('email' => $email, 'password' => $password)))		{
-			//return Redirect::intended('dashboard');
-			return "works";
-		} else {	
-			return "hello world";
+
+		$user = Dispatcher::attempt($email, $password);
+
+		if ($user) {
+			echo "You logged in correctly";
+			Session::put('user', $user);
+		} else {
+			App::abort(401, 'You are not authorized.');
 		}
 	}
 

@@ -48,9 +48,20 @@ class Dispatcher extends Eloquent implements UserInterface, RemindableInterface 
 	}
 
 	public function volunteers()
-        {
-                return $this->hasMany('Volunteer');
-        }
+	{
+		return $this->hasMany('Volunteer');
+	}
+
+	public static function attempt($email, $password)
+	{
+		$user = Dispatcher::where('email', $email)->where('password', $password)->first();
+		if ($user)
+		{
+			return $user;
+		}
+
+		return false;
+	}
 
 }
 
