@@ -14,4 +14,5 @@
 Route::get('/', 'HomeController@index');
 Route::get('dashboard', 'HomeController@dashboard');
 
-Route::any('login', 'HomeController@login');
+Route::post('login', 'HomeController@login');
+Route::post('volunteer/create', 'VolunteerController@create');
