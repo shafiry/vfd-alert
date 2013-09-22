@@ -16,3 +16,4 @@ Route::get('dashboard', 'HomeController@dashboard');
 
 Route::post('login', 'HomeController@login');
 Route::post('volunteer/create', 'VolunteerController@create');
+Route::post('incident/create', 'IncidentController@create');
