@@ -1,10 +1,17 @@
 @extends('master')
 
 @section('container')
-	<p>This is my body content.</p>
-	{{ Form::open(array('url' => '/login')) }}
-	{{ Form::text('email') }}
-	{{ Form::password('password') }}
-	{{ Form::submit('Click Me!') }}
-	{{ Form::close() }}
+	<div class="login-container">
+		{{ Form::open(array('url' => '/login')) }}
+		<div class="input-group">
+			{{ Form::label('email', 'Email:') }}
+			{{ Form::text('email', NULL, array('class' => 'full')) }}
+		</div>
+		<div class="input-group">
+			{{ Form::label('password', 'Password:') }}
+			{{ Form::password('password', array('class' => 'full')) }}
+		</div>
+		{{ Form::submit('Sign in') }}
+		{{ Form::close() }}
+	</div>
 @stop

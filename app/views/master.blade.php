@@ -10,19 +10,23 @@
 		<script src="js/vendor/less-1.4.1.min.js"></script>		
 	</head>
 	<body>
-		<header>
-			<h1>VFD-Alert</h1>
+
+		<header class="header">
+			<div class="container">
+				<h1 class="header-title">
+					<a href="{{ URL::to('/') }}">VFD-Alert</a>
+				</h1>
+			</div>
 		</header>
 
 		<div class="container">
-            @yield('container')
+			@yield('container')
 		</div>
 
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
 
 	</body>
 </html>
