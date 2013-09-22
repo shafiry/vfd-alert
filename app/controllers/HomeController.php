@@ -27,7 +27,9 @@ class HomeController extends BaseController {
 			return Redirect::to('/');
 		}
 
-		return View::make('pages.dashboard');
+		$data['dispatcher'] = Dispatcher::find(Session::get('user')->id);
+
+		return View::make('pages.dashboard', $data);
 	}
 
 	public function login()
