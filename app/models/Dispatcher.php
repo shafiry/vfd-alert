@@ -65,7 +65,7 @@ class Dispatcher extends Eloquent implements UserInterface, RemindableInterface 
 
 	public static function is_logged_in()
 	{
-		if (Session::get('user')->id)
+		if (Session::get('user'))
 		{
 			return true;
 		}

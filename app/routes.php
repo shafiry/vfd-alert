@@ -12,5 +12,6 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('dashboard', 'HomeController@dashboard');
 
 Route::any('login', 'HomeController@login');

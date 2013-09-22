@@ -20,6 +20,16 @@ class HomeController extends BaseController {
 		return View::make('pages.index');
 	}
 
+	public function dashboard()
+	{
+		if (!Dispatcher::is_logged_in())
+		{
+			return Redirect::to('/');
+		}
+
+		return View::make('pages.dashboard');
+	}
+
 	public function login()
 	{
 		$email = Input::get('email');
@@ -29,6 +39,7 @@ class HomeController extends BaseController {
 
 		if ($user) {
 			Session::put('user', $user);
+			return Redirect::to('dashboard');
 
 			// // set your AccountSid and AuthToken from www.twilio.com/user/account
 			// $AccountSid = "AC26eaf500ebb246cefb61e96834aba585";
